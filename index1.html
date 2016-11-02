@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<script src="jquery-1.11.2.min.js"></script>
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+		
+		/*.product {
+			width: 100%;
+			height: auto;
+			margin-top: 20px
+		}
+		
+		.tab {
+			width: 1200px;
+			height: auto;
+			background: #fff;
+			margin: 0 auto;
+		}
+		
+		#myTab02 {
+			width: 1200px;
+			height: 45px;
+			background: #fafafa;
+			z-index: 100;
+		}
+		
+		#myTab02 li {
+			float: left;
+			width: 150px;
+			height: 45px;
+			text-align: center;
+			line-height:45px;
+			font-size: 14px;
+			color: #333;
+			cursor: pointer;
+		}
+		
+		#ac {
+			width: 100%;
+			height: auto;
+		}
+		#myTab02_Content0,#myTab02_Content2,#myTab02_Content3{
+			width: 100%;
+			height: auto;
+		}
+		#myTab02_Content2,#myTab02_Content3{
+			display: none;
+		}
+		#myTab02_Content2{
+			margin: 0 auto; 
+			background: lightgoldenrodyellow;
+            padding: 20px 0;
+		}
+					.product .tab #myTab02 li.typebox {
+				background: #fff;
+				color:#394659;
+				font-weight: bold;
+				border-top: 2px solid #00A2CA;
+				border-bottom: none;
+			
+				
+			}*/
+			
+			/*选项卡样式*/
+			
+			.product {
+				width: 100%;
+				height: auto;
+				margin-top: 20px
+			}
+			
+			.tab {
+				width: 780px;
+				height: auto;
+				background: #fff;
+				margin: 0 auto;
+			}
+			
+			#myTab02 {
+				width: 780px;
+				height: 45px;
+				background: #fafafa;
+				z-index: 100;
+				border-bottom: 1px solid #DDDDDD;
+				box-sizing: border-box;		
+				
+			}
+			
+			#myTab02 li {
+				float: left;
+				width: 150px;
+				height: 45px;
+				text-align: center;
+				line-height: 45px;
+				font-size: 14px;
+				color: #666666;
+				cursor: pointer;
+				font-weight: bold;
+				border: 1px solid #ddd;
+				box-sizing: border-box;		
+				
+			}
+			
+			#ac {
+				width: 780px;
+				height: auto;
+			}
+			
+			#myTab02_Content0,
+			#myTab02_Content1, #myTab02_Content2{
+				width: 100%;
+				height: auto;
+			}
+			
+			#myTab02_Content1 {
+				margin: 0 auto;
+				padding: 20px 0;
+			}
+			
+
+			.product .tab #myTab02 li.typebox {
+				background: #fff;
+				color:#394659;
+				font-weight: bold;
+				border-top: 2px solid #00A2CA;
+				border-bottom: none;
+			
+				
+			}			
+	</style>
+
+	<body>
+
+		<div class="product">
+			<div class="tab">
+				<ul id="myTab02">
+					<li class="active bgbian typebox" onclick="nTabs(this,0)">yi</li>
+					<li class="normal bgbian" onclick="nTabs(this,1)">er</li>
+					<li class="normal bgbian" onclick="nTabs(this,2)">san</li>
+				</ul>
+				<div id="ac">
+					<div id="myTab02_Content0">1</div>
+					<div id="myTab02_Content1"  style="display: none;">2</div>
+					<div id="myTab02_Content2"  style="display: none;">3</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script>
+function nTabs(thisObj,Num){
+	if(thisObj.className == "active") return;
+	var tabObj = thisObj.parentNode.id;
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i = 0;i<tabList.length;i++){
+		if(i == Num){
+			thisObj.className = "active";
+			document.getElementById(tabObj+"_Content"+i).style.display="block";
+		}else{
+			tabList[i].className="normal";
+			document.getElementById(tabObj+"_Content"+i).style.display="none";
+		}
+	}
+}
+
+	$(function() {
+		$("#myTab02 .bgbian").click(function() {
+			$(this).addClass('typebox').siblings().removeClass('typebox');
+		})
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

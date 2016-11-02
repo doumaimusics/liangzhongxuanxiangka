@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<script src="jquery-1.11.2.min.js"></script>
+	<title>选项卡2</title>
+</head>
+<style>
+*{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+a{
+	text-decoration:none;
+	color: #333;
+}
+
+	.product{
+		width:100%;
+		height:auto;
+	}
+	.product .tab{
+		width:1200px;
+		height: auto;
+		margin: 0 auto;
+	}
+	.product .tab .title{
+		width: 100%;
+		height: 45px;
+		background:#fff;
+	}
+	.product .tab .title li.active{
+		background: #F0F0F0;
+		color:#655C95;
+	}
+	.product .tab .title li{
+		background: #F8F8F8;
+		float:left;
+		width: 33.333%;
+		height: 100%;
+		color: #8478B3;
+		text-align: center;
+		line-height: 45px;
+		cursor:pointer;
+	}
+	.product .tab .title li:hover{
+		background: #F5F5F5;
+	}
+	
+	.product .tab .content{
+		width: 100%;
+		height: 500px;
+		line-height: 500px;
+	}
+	.product .tab .content li{
+		width: 100%;
+		height: 100%;
+		display: none;
+		text-align: center;
+		
+	}
+		.product .tab .content li.active{
+			display: block;
+		}
+</style>
+<body>
+	<div class="product">
+		<div class="tab">
+			<ul class="title">
+				<li class="active">Tab 1</li>
+				<li>Tab 2</li>
+				<li>Tab 3</li>
+			</ul>
+			<ul class="content">
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+
+$(function(){
+	$(".product .tab .title li").click(function(){
+		$(".product .tab .title li").removeClass("active");
+		$(".product .tab .content li").removeClass("active");
+		$(this).addClass("active");
+		var index=$(this).index();
+		$(".content li").eq(index).addClass("active");
+	})
+})
+
+
+
+
+//$(function(){
+//	$('.product .tab .title li').click(function(){
+//		$(".product .tab .title li").removeClass('active');
+//		$(".product .tab .content li").removeClass('active');
+//		$(this).addClass('active');
+//		var index=$(this).index();
+//		$(".content li").eq(index).addClass("active");
+//	})
+//})
+</script>
